@@ -76,3 +76,30 @@ for word, count in word_counts.items():
 
 print("Most frequent word:", most_frequent_word)
 print("Count:", highest_count)
+users = {
+    "user_01": {"username": "dev_alex", "role": "admin", "active": True},
+    "user_02": {"username": "sarah_k", "role": "editor", "active": False},
+    "user_03": {"username": "mike_99", "role": "viewer", "active": True},
+    "user_04": {"username": "elena_r", "role": "editor", "active": True}
+}
+
+# 1. Print usernames of all active users
+print("Active users:")
+for user_id, details in users.items():
+    if details["active"] == True:
+        print(details["username"])
+
+
+# 2. Update user_02
+users["user_02"]["active"] = True
+users["user_02"]["role"] = "admin"
+
+
+# 3. Count total number of admin users
+admin_count = 0
+
+for user_id, details in users.items():
+    if details["role"] == "admin":
+        admin_count += 1
+
+print("\nTotal admin users:", admin_count)
